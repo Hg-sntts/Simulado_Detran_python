@@ -18,7 +18,7 @@ layout =[
             [sg.Radio(perguntas[pergunta_atual]['opcoes'][1], group_id='fala')],
             [sg.Radio(perguntas[pergunta_atual]['opcoes'][2], group_id='fala')],
             [sg.Text('', key='msg')],
-            [sg.Button('Ok'), sg.Button('Cancelar'), sg.Button('Proximo')]
+            [sg.Button('Proximo'), sg.Button('Cancelar')]
         ]
 
 # Cria a Janela
@@ -66,7 +66,7 @@ while True:
             [sg.Radio(perguntas[pergunta_atual]['opcoes'][1], group_id='fala')],
             [sg.Radio(perguntas[pergunta_atual]['opcoes'][2], group_id='fala')],
             [sg.Text('', key='msg')],
-            [sg.Button('Ok'), sg.Button('Cancelar'), sg.Button('Proximo')]
+            [sg.Button('Proximo'), sg.Button('Cancelar')]
         ]
         janela = sg.Window('Janela teste', layout)
         continue
