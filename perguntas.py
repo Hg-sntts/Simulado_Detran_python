@@ -1,31 +1,31 @@
 perguntas =[
     {
 
-        'pergunta': 'Qual é o planeta mais próximo do Sol?',
-         'opcoes': ['Vênus', 'Mercúrio', 'Marte'],
-          'resp': 'Mercúrio'
+        'pergunta': 'Qual destes adjetivos descreve melhor um Audi A8 preto fosco?',
+        'opcoes': ['Elegante', 'Bonito', 'Espalhafatoso', 'Chique'],
+        'resp': 'Elegante'
     },
     {
 
-        'pergunta': 'Qual é a capital do Brasil?',
-         'opcoes': ['São Paulo', 'Rio de Janeiro',
-          'Brasília'], 'resp': 'Brasília'
+        'pergunta': 'Um carro popular é, essencialmente um(a):',
+        'opcoes': ['Carga pesada', 'Veiculo de corrida', 'Viculo marítimo', 'Meio de transporte térreo'],
+        'resp': 'Meio de transporte térreo'
     },
     {
 
-        'pergunta': 'Qual é o país mais populoso do mundo?',
-         'opcoes': ['China', 'Estados Unidos', 'Índia'],
-          'resp': 'China'
+        'pergunta': 'Oque caracteroza um bom carro?',
+        'opcoes': ['Veloz', 'bonito', 'confiável', 'Um carro que atende bem suas necessidades, sejam elas quais forem'],
+        'resp': 'Um carro que atende bem suas necessidades, sejam elas quais forem'
     },
     {
         'pergunta': 'Quantas rodas tem um carro popular?',
         'opcoes':['1', '2', '3', '4'],
-         'resp': '3'
+         'resp': '4'
     },
     {
-        'pergunta':'pergunta',
-        'opcoes':['a', 'b', 'c', 'd'],
-        'resp':'c'
+        'pergunta':'Oque fazer em caso de embreaguez antes de dirigir?',
+        'opcoes':['Dirigir', 'Digirigir, mas acompanhado de um carona', 'Dirigir em baixa velocidade', 'Não dirigir'],
+        'resp':'Não dirigir'
     },
     {
         'pergunta': 'Quando um veículo colide, as lesões do condutor tendem a ser mais graves:', 
