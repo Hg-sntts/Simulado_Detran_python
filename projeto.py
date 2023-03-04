@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 
+
 # Define uma cor
 pontos = 0
 sg.theme('DarkAmber')
@@ -7,7 +8,9 @@ sg.theme('DarkAmber')
 perguntas =[
     {'pergunta': 'Qual é o planeta mais próximo do Sol?', 'opcoes': ['Vênus', 'Mercúrio', 'Marte'], 'resp': 'Mercúrio'},
     {'pergunta': 'Qual é a capital do Brasil?', 'opcoes': ['São Paulo', 'Rio de Janeiro', 'Brasília'], 'resp': 'Brasília'},
-    {'pergunta': 'Qual é o país mais populoso do mundo?', 'opcoes': ['China', 'Estados Unidos', 'Índia'], 'resp': 'China'}
+    {'pergunta': 'Qual é o país mais populoso do mundo?', 'opcoes': ['China', 'Estados Unidos', 'Índia'], 'resp': 'China'},
+    {'pergunta': 'Quantas rodas tem um carro popular?', 'opcoes':['1', '2', '3', '4'], 'resp': '3'},
+    {'pergunta':'pergunta', 'opcoes':['a', 'b', 'c', 'd'], 'resp':'c'}
 ]
 
 pergunta_atual = 0
@@ -68,7 +71,9 @@ while True:
             [sg.Text('', key='msg')],
             [sg.Button('Proximo'), sg.Button('Cancelar')]
         ]
+        janela.close()
         janela = sg.Window('Janela teste', layout)
+        
         continue
     
 print(pontos)
