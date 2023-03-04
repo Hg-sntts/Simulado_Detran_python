@@ -6,8 +6,6 @@ import perguntas
 pontos = 0
 sg.theme('DarkAmber')
 
-
-
 pergunta_atual = 0
 # Tudo que tiver dentro da janela
 layout =[   
