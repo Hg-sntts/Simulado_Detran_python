@@ -13,6 +13,7 @@ layout =[
             [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][0], group_id='fala')],
             [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][1], group_id='fala')],
             [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][2], group_id='fala')],
+            [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][3], group_id='fala')],
             [sg.Text('', key='msg')],
             [sg.Button('Proximo'), sg.Button('Cancelar')]
         ]
@@ -49,6 +50,13 @@ while True:
             else:
                 sg.popup('Resposta correta!')
                 pontos += 1
+        
+         elif values[3]:
+            if perguntas.perguntas[pergunta_atual]['resp'] != perguntas.perguntas[pergunta_atual]['opcoes'][3]:
+                sg.popup(f'Resposta incorreta. A resposta correta era: {perguntas.perguntas[pergunta_atual]["resp"]}')
+            else:
+                sg.popup('Resposta correta!')
+                pontos += 1
 
         pergunta_atual += 1
 
@@ -61,6 +69,7 @@ while True:
             [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][0], group_id='fala')],
             [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][1], group_id='fala')],
             [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][2], group_id='fala')],
+            [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][3], group_id='fala')],
             [sg.Text('', key='msg')],
             [sg.Button('Proximo'), sg.Button('Cancelar')]
         ]
@@ -69,5 +78,5 @@ while True:
         
         continue
     
-print(pontos)
+sg.popup("")
 janela.close()
