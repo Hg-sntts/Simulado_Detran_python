@@ -13,7 +13,7 @@ perguntas =[
     },
     {
 
-        'pergunta': 'Oque caracteroza um bom carro?',
+        'pergunta': 'Oque caracteriza um bom carro?',
         'opcoes': ['Veloz', 'bonito', 'confiável', 'Um carro que atende bem suas necessidades, sejam elas quais forem'],
         'resp': 'Um carro que atende bem suas necessidades, sejam elas quais forem'
     },
