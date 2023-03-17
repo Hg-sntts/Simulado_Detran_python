@@ -5,15 +5,16 @@ import perguntas
 # Define uma cor
 pontos = 0
 sg.theme('DarkAmber')
+sizetxt = 50
 
 pergunta_atual = 0
 # Tudo que tiver dentro da janela
 layout =[   
             [sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'],   font='Consolas', text_color='white', size=(50, None))],
-            [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][0], group_id='fala')],
-            [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][1], group_id='fala')],
-            [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][2], group_id='fala')],
-            [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][3], group_id='fala')],
+            [sg.Radio(f"A) {perguntas.perguntas[pergunta_atual]['opcoes'][0]}", group_id='fala', size=(sizetxt, None))],
+            [sg.Radio(f"B) {perguntas.perguntas[pergunta_atual]['opcoes'][1]}", group_id='fala', size=(sizetxt, None))],
+            [sg.Radio(f"C) {perguntas.perguntas[pergunta_atual]['opcoes'][2]}", group_id='fala', size=(sizetxt, None))],
+            [sg.Radio(f"D) {perguntas.perguntas[pergunta_atual]['opcoes'][3]}", group_id='fala', size=(sizetxt, None))],
             [sg.Text('', key='msg')],
             [sg.Button('Proximo'), sg.Button('Cancelar')]
         ]
@@ -66,10 +67,10 @@ while True:
 
         layout =[   
             [sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'],   font='Consolas', text_color='white', size=(50, None))],
-            [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][0], group_id='fala')],
-            [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][1], group_id='fala')],
-            [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][2], group_id='fala')],
-            [sg.Radio(perguntas.perguntas[pergunta_atual]['opcoes'][3], group_id='fala')],
+            [sg.Radio(f"A) {perguntas.perguntas[pergunta_atual]['opcoes'][0]}", group_id='fala', size=(sizetxt, None))],
+            [sg.Radio(f"B) {perguntas.perguntas[pergunta_atual]['opcoes'][1]}", group_id='fala', size=(sizetxt, None))],
+            [sg.Radio(f"C) {perguntas.perguntas[pergunta_atual]['opcoes'][2]}", group_id='fala', size=(sizetxt, None))],
+            [sg.Radio(f"D) {perguntas.perguntas[pergunta_atual]['opcoes'][3]}", group_id='fala', size=(sizetxt, None))],
             [sg.Text('', key='msg')],
             [sg.Button('Proximo'), sg.Button('Cancelar')]
         ]
@@ -77,6 +78,5 @@ while True:
         janela = sg.Window('Janela teste', layout)
         
         continue
-    
-sg.popup("")
+
 janela.close()
