@@ -41,31 +41,26 @@ while True:
     if event == 'Proximo':
         if values[0]:
             if perguntas.perguntas[pergunta_atual]['resp'] != perguntas.perguntas[pergunta_atual]['opcoes'][0]:
-                sg.popup(f'Resposta incorreta.\nA resposta correta era: {perguntas.perguntas[pergunta_atual]["resp"]}', font=('Calibri', 15))
+             ()
             else:
-                sg.popup('Resposta correta!', font=('Calibri', 15))
                 pontos += 1
 
-            
         elif values[1]:
             if perguntas.perguntas[pergunta_atual]['resp'] != perguntas.perguntas[pergunta_atual]['opcoes'][1]:
-                sg.popup(f'Resposta incorreta.\nA resposta correta era: {perguntas.perguntas[pergunta_atual]["resp"]}', font=('Calibri', 15))
+             ()
             else:
-                sg.popup('Resposta correta!', font=('Calibri', 15))
                 pontos += 1
 
         elif values[2]:
             if perguntas.perguntas[pergunta_atual]['resp'] != perguntas.perguntas[pergunta_atual]['opcoes'][2]:
-                sg.popup(f'Resposta incorreta.\nA resposta correta era: {perguntas.perguntas[pergunta_atual]["resp"]}', font=('Calibri', 15))
+             ()
             else:
-                sg.popup('Resposta correta!', font=('Calibri', 15))
                 pontos += 1
         
         elif values[3]:
             if perguntas.perguntas[pergunta_atual]['resp'] != perguntas.perguntas[pergunta_atual]['opcoes'][3]:
-                sg.popup(f'Resposta incorreta.\nA resposta correta era: {perguntas.perguntas[pergunta_atual]["resp"]}', font=('Calibri', 15))
+             ()
             else:
-                sg.popup('Resposta correta!', font=('Calibri', 15))
                 pontos += 1
 
         pergunta_atual += 1
@@ -88,7 +83,6 @@ while True:
             ]
         janela.close()
         janela = sg.Window('Janela teste', layout)
-        
         continue
 
 janela.close()
