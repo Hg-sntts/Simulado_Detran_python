@@ -33,7 +33,7 @@ janela = sg.Window('Janela teste', layout)
 while True:
     event, values = janela.read()
     #se o usuário fechar ou cancelar
-    if event == sg.WIN_CLOSED or event == 'Cancelar':
+    if event == sg.WIN_CLOSED or event == '  ':
         break
 
     if event == '   ':
@@ -80,8 +80,8 @@ while True:
             [sg.Radio(f"D) {perguntas.perguntas[pergunta_atual]['opcoes'][3]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
             [sg.Text('', key='msg')],
             [sg.Button('   ', image_data=imgbuttonprox, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0),
-            sg.Button(sg.Button('  ', image_data=imgbuttoncancel, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0))]
-        ]
+            sg.Button('  ', image_data=imgbuttoncancel, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0)]
+            ]
         janela.close()
         janela = sg.Window('Janela teste', layout)
         
