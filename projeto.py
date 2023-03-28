@@ -34,7 +34,7 @@ layout =[
         ]
 
 # Cria a Janela
-janela = sg.Window('Janela teste', layout, size=(1100,620))
+janela = sg.Window('Janela teste', layout, size=(1100,500))
 
 # Loop pra processar os "eventos" e pegar os valores inseridos na janela
 while True:
@@ -80,7 +80,7 @@ while True:
             sg.Button('', image_data=sair, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Cancelar')]
             ]
         janela.close()
-        janela = sg.Window('Janela teste', layout, size=(1100,620))
+        janela = sg.Window('Janela teste', layout, size=(1100,500))
         
         continue
 
