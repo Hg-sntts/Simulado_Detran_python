@@ -5,7 +5,7 @@ import perguntas
 
 #função pra retornar a imagem no formato base64
 def retornarBase64(image):
-    with open(f"C:\\Users\\hugoj\\Documents\\github\\perguntasRespostas\\imagens\\{image}.png", "rb") as image_file:
+    with open(f"imagens\\{image}.png", "rb") as image_file:
         return base64.b64encode(image_file.read())
 
 # Define uma cor e texto
