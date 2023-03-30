@@ -35,7 +35,7 @@ layout =[
         ]
 
 # Cria a Janela
-janela = sg.Window('Janela teste', layout, size=(1100,500))
+janela = sg.Window('Janela teste', layout, size=(1280,500))
 
 # Loop pra processar os "eventos" e pegar os valores inseridos na janela
 while True:
@@ -76,12 +76,12 @@ while True:
             [sg.Radio(f"B) {perguntas.perguntas[pergunta_atual]['opcoes'][1]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
             [sg.Radio(f"C) {perguntas.perguntas[pergunta_atual]['opcoes'][2]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
             [sg.Radio(f"D) {perguntas.perguntas[pergunta_atual]['opcoes'][3]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
-            [sg.Canvas(size=(0,175))],
+            [sg.Canvas(size=(0,150))],
             [sg.Button('', image_data=proximo, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Proximo'),
             sg.Button('', image_data=sair, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Cancelar')]
             ]
         janela.close()
-        janela = sg.Window('Janela teste', layout, size=(1100,500))
+        janela = sg.Window('Janela teste', layout, size=(1280,500))
         
         continue
 
