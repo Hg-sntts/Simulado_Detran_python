@@ -3,6 +3,8 @@ import base64
 import PySimpleGUI as sg
 import perguntas
 
+pergunta_atual = 0
+
 #função pra retornar a imagem no formato base64
 def retornarBase64(image):
     with open(f"imagens\\{image}.png", "rb") as image_file:
@@ -13,14 +15,16 @@ pontos = 0
 sg.theme('DarkAmber')
 sizetxt = 65
 
-# Botão de próximo:
+# Botão de próximo e sair:
 proximo = retornarBase64('prox')
-# Botão de cancelar:
 sair = retornarBase64('cancel')
 
-pergunta_atual = 0
 # Tudo que tiver dentro da janela
-col1 = [[sg.Text('Fala', justification='right')]]
+
+col1 = [[sg.Button('', image_data=proximo, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Proximo'),
+            sg.Canvas(size=(900,2)), sg.Button('', image_data=sair, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Cancelar')]]
+#col2 = [[sg.Text('Testando 3'), sg.Text('Testando 4')]]
+
 layout =[   
             [sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'], font=('Consolas', 20), text_color='white', size=(sizetxt, None))],
             [sg.Canvas(size=(1100,2), background_color='white')],
@@ -29,9 +33,8 @@ layout =[
             [sg.Radio(f"B) {perguntas.perguntas[pergunta_atual]['opcoes'][1]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
             [sg.Radio(f"C) {perguntas.perguntas[pergunta_atual]['opcoes'][2]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
             [sg.Radio(f"D) {perguntas.perguntas[pergunta_atual]['opcoes'][3]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
-            [sg.Canvas(size=(0,175))],
-            [sg.Button('', image_data=proximo, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Proximo'),
-            sg.Button('', image_data=sair, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Cancelar')]
+            [sg.Canvas(size=(0,150))],
+            [sg.Column(col1)]
         ]
 
 # Cria a Janela
@@ -68,6 +71,7 @@ while True:
                 sg.popup('Fim do jogo!', font=('Calibri', 15))
                 break
 
+
         layout =[   
             [sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'], font=('Consolas', 20), text_color='white', size=(sizetxt, None))],
             [sg.Canvas(size=(1100,2), background_color='white')],
@@ -78,8 +82,9 @@ while True:
             [sg.Radio(f"D) {perguntas.perguntas[pergunta_atual]['opcoes'][3]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
             [sg.Canvas(size=(0,150))],
             [sg.Button('', image_data=proximo, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Proximo'),
-            sg.Button('', image_data=sair, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Cancelar')]
+            sg.Canvas(size=(900,2)), sg.Button('', image_data=sair, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Cancelar')]
             ]
+
         janela.close()
         janela = sg.Window('Janela teste', layout, size=(1280,500))
         
