@@ -36,7 +36,7 @@ layout =[
         ]
 
 # Cria a Janela
-janela = sg.Window('Janela teste', layout, size=(1280,500))
+janela = sg.Window('Prova do DETRAN', layout, size=(1280,500))
 
 # Loop pra processar os "eventos" e pegar os valores inseridos na janela
 while True:
@@ -108,7 +108,7 @@ else:
         [[sg.Canvas(size=(230,2)), sg.Button('', image_data=sair, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Cancelar')]]
 ]
 
-janela2 = sg.Window('Janela teste', layoutResultado, size=(700,500))
+janela2 = sg.Window('RESULTADO', layoutResultado, size=(700,500))
 
 while True:
     event, values = janela2.read()
