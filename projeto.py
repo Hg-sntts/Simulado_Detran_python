@@ -23,7 +23,7 @@ sair = retornarBase64('cancel')
 # Tudo que tiver dentro da janela
 
 layout =[   
-            [[sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'], font=('Consolas', 20), text_color='white', size=(sizetxt, 5)), sg.Text(f'Pergunta de número {pergunta_atual+1}', text_color='white')]],
+            [[sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'], font=('Consolas', 20), text_color='white', size=(sizetxt, 5)), sg.Text(f'Pergunta de número {pergunta_atual+1} / 30', text_color='white')]],
             [sg.Canvas(size=(1100,2), background_color='white')],
             [sg.Canvas(size=(0,10))],
             [sg.Radio(f"A) {perguntas.perguntas[pergunta_atual]['opcoes'][0]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
@@ -72,7 +72,7 @@ while True:
 
 
         layout =[   
-            [[sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'], font=('Consolas', 20), text_color='white', size=(sizetxt, 5)), sg.Text(f'Pergunta de número {pergunta_atual+1}', text_color='white')]],
+            [[sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'], font=('Consolas', 20), text_color='white', size=(sizetxt, 5)), sg.Text(f'Pergunta de número {pergunta_atual+1} / 30', text_color='white')]],
             [sg.Canvas(size=(1100,2), background_color='white')],
             [sg.Canvas(size=(0,10))],
             [sg.Radio(f"A) {perguntas.perguntas[pergunta_atual]['opcoes'][0]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
@@ -91,17 +91,21 @@ while True:
 
 janela.close()
 
-if pontos >= 15:
+if pontos >= 21:
     layoutResultado = [
-        [[sg.Canvas(size=(400,2), background_color=None), sg.Text('Parabéns! Você foi aprovado', font=('Consolas', 20), text_color='white', size=(sizetxt, 5))]]
+        [[sg.Canvas(size=(100,2), background_color=None), sg.Text('Parabéns! Você foi aprovado', font=('Consolas', 20), text_color='white', size=(sizetxt, 5))]],
+        [[sg.Canvas(size=(170,2), background_color=None), sg.Text(f'Sua pontuação foi de: ', font=('Consolas', 20), text_color='white')]],
+        [[sg.Canvas(size=(220,2), background_color=None), sg.Text(f'{pontos/30*100}%', font=('Consolas', 50), text_color='green')]]
 
 ]
 else:
     layoutResultado = [
-        [[sg.Canvas(size=(400,2), background_color=None), sg.Text('Infelizmente você foi reprovado!', font=('Consolas', 20), text_color='white', size=(sizetxt, 5))]]
+        [[sg.Canvas(size=(100,2), background_color=None), sg.Text('Infelizmente você foi reprovado!', font=('Consolas', 20), text_color='white', size=(sizetxt, 5))]],
+        [[sg.Canvas(size=(170,2), background_color=None), sg.Text(f'Sua pontuação foi de: ', font=('Consolas', 20), text_color='white')]],
+        [[sg.Canvas(size=(220,2), background_color=None), sg.Text(f'{pontos/30*100}%', font=('Consolas', 50), text_color='red')]]
 ]
 
-janela2 = sg.Window('Janela teste', layoutResultado, size=(1280,500))
+janela2 = sg.Window('Janela teste', layoutResultado, size=(700,500))
 
 while True:
     event, values = janela2.read()
