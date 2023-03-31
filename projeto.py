@@ -13,7 +13,7 @@ def retornarBase64(image):
 
 # Define uma cor e texto
 pontos = 0
-sg.theme('DarkAmber')
+sg.theme('DarkBlue16')
 sizetxt = 65
 
 # Botão de próximo e sair:
