@@ -1,4 +1,3 @@
-from PIL import Image
 import base64
 import PySimpleGUI as sg
 import perguntas
