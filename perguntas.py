@@ -1,31 +1,91 @@
 perguntas =[
-    {
+     {
 
-        'pergunta': 'Qual destes adjetivos descreve melhor um Audi A8 preto fosco?',
-        'opcoes': ['Elegante', 'Bonito', 'Espalhafatoso', 'Chique'],
-        'resp': 'Elegante'
-    },
-    {
-
-        'pergunta': 'Um carro popular é, essencialmente um(a):',
-        'opcoes': ['Carga pesada', 'Veiculo de corrida', 'Viculo marítimo', 'Meio de transporte térreo'],
-        'resp': 'Meio de transporte térreo'
+        'pergunta': 'O atendimento adequado de Primeiros Socorros a ciclistas acidentados com suspeita de fratura na região do pescoço é:',
+        'opcoes': ['deitar a vítima de costas, com a cabeça virada para um dos lados', 'deitar a vítima de lado', 'colocar uma almofada embaixo da cabeça da vítima', 'jamais movimentar a vítima e chamar socorro médico imediatamente'],
+        'resp': 'jamais movimentar a vítima e chamar socorro médico imediatamente'
     },
     {
 
-        'pergunta': 'Oque caracteriza um bom carro?',
-        'opcoes': ['Veloz', 'bonito', 'confiável', 'Um carro que atende bem suas necessidades, sejam elas quais forem'],
-        'resp': 'Um carro que atende bem suas necessidades, sejam elas quais forem'
+        'pergunta': 'No caso de um atropelamento, deve-se imediatamente:',
+        'opcoes': ['sinalizar o local e acionar o serviço de atendimento médico de resgate', 'perseguir o veículo envolvido no acidente', 'colocar a vítima sentada, para facilitar a respiração', 'colocar a vítima em seu veículo e removê-la para um hospital'],
+        'resp': 'sinalizar o local e acionar o serviço de atendimento médico de resgate'
     },
     {
-        'pergunta': 'Quantas rodas tem um carro popular?',
-        'opcoes':['1', '2', '3', '4'],
-         'resp': '4'
+
+        'pergunta': 'A velocidade máxima permitida para uma via coletora sem sinalização é de:',
+        'opcoes': ['50 km/h', '30 km/h', '40 km/h', '60 km/h'],
+        'resp': '40 km/h'
     },
     {
-        'pergunta':'Oque fazer em caso de embreaguez antes de dirigir?',
-        'opcoes':['Dirigir', 'Digirigir, mas acompanhado de um carona', 'Dirigir em baixa velocidade', 'Não dirigir'],
-        'resp':'Não dirigir'
+
+        'pergunta': 'Transitar com o veículo derramando, lançando ou arrastando sobre a via combustível ou lubrificante que esteja utilizando, é uma infração:',
+        'opcoes': ['gravíssima', 'gravíssima, agravada em 3 vezes o valor da multa', 'média', 'leve'],
+        'resp': 'gravíssima'
+    },
+    {
+
+        'pergunta': 'É uma regra de segurança para condutores de motocicletas e ciclomotores:',
+        'opcoes': ['é obrigatório o uso de capacete de segurança para o condutor e opcional para o passageiro', 'as ultrapassagens devem ser feitas sempre pela direita e opcionalmente pela esquerda', 'é proibido transportar crianças com menos de 10 anos', 'nas curvas, o passageiro deve movimentar o corpo para o lado inverso ao do condutor para garantir a estabilidade do veículo'],
+        'resp': 'é proibido transportar crianças com menos de 10 anos'
+    },
+    {
+
+        'pergunta': 'O uso do farol alto, à noite, em um rodovia sem sinalização:',
+        'opcoes': ['deve ser substituído pela luz baixa ao se aproximar de outro veículo em sentido contrário', 'é permitido, mesmo ao cruzar com outro veículo em sentido contrário', 'é permitido, em rodovias de pista dupla', 'é proibido, em qualquer caso'],
+        'resp': 'deve ser substituído pela luz baixa ao se aproximar de outro veículo em sentido contrário'
+    },
+    {
+
+        'pergunta': 'Em uma ultrapassagem, uma das principais variáveis básicas envolvidas é a:',
+        'opcoes': ['distância de conversão', 'avaliação do risco a ser assumido durante a manobra', 'declividade da via', 'distância de parada'],
+        'resp': 'avaliação do risco a ser assumido durante a manobra'
+    },
+    {
+
+        'pergunta': 'Quando estacionar o veículo sobre as pistas de rolamento das estradas, o condutor será punido com:',
+        'opcoes': ['multa, apenas', 'remoção do veiculo e multa', 'apreensão da Carteira Nacional de Habilitação e multa', 'cassação da Carteira Nacional de Habilitação'],
+        'resp': 'remoção do veiculo e multa'
+    },
+    {
+
+        'pergunta': 'A velocidade mínima não pode ser inferior a:',
+        'opcoes': ['40 Km/h', '20 Km/h', '1/3 da velocidade máxima regulamentada para a via', '1/2 da velocidade máxima regulamentada para a via'],
+        'resp': '1/2 da velocidade máxima regulamentada para a via'
+    },
+    {
+
+        'pergunta': 'O procedimento correto em um declive acentuado é:',
+        'opcoes': ['utilizar o "ponto morto"', 'utilizar a mesma marcha que seria necessária no caso de um aclive acentuado', 'testar o acelerador e desengrenar o veículo', 'desligar o motor do veículo'],
+        'resp': 'utilizar a mesma marcha que seria necessária no caso de um aclive acentuado'
+    },
+    {
+
+        'pergunta': 'Aos veículos reprovados na inspeção de segurança e na de emissão de gases poluentes e ruídos será aplicada:',
+        'opcoes': ['multa', 'apreensão do veículo', 'recolhimento do veículo', 'medida administrativa de retenção'],
+        'resp': 'medida administrativa de retenção'
+    },
+    {
+
+        'pergunta': 'Parar o veículo sobre a faixa de pedestres na mudança de sinal luminoso é infração de trânsito de natureza:',
+        'opcoes': ['leve', 'média', 'grave', 'gravíssima'],
+        'resp': 'média'
+    },
+    {
+
+        'pergunta': 'Se o candidato à habilitação for reprovado no exame de direção veicular, ele só poderá realizar novo exame após:',
+        'opcoes': ['a qualquer tempo, não é necessário esperar nenhum prazo', '14 dias da divulgação do resultado', '15 dias da divulgação do resultado', '8 dias da divulgação do resultado'],
+        'resp': 'a qualquer tempo, não é necessário esperar nenhum prazo'
+    },
+    {
+        'pergunta': 'O sistema que mantém a temperatura do motor sempre em condições de funcionamento chama-se:',
+        'opcoes':['alimentação', 'elétrico', 'arrefecimento', 'inflamação'],
+         'resp': 'arrefecimento'
+    },
+    {
+        'pergunta':'Em dias de chuva, com a pista escorregadia, a distância de segurança entre dois veículos deverá ser de:',
+        'opcoes':['4 segundos', '2 segundos', '6 segundos', '10 segundos'],
+        'resp':'4 segundos'
     },
     {
         'pergunta': 'Quando um veículo colide, as lesões do condutor tendem a ser mais graves:', 
