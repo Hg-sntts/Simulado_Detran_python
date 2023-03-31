@@ -2,6 +2,7 @@ from PIL import Image
 import base64
 import PySimpleGUI as sg
 import perguntas
+from time import sleep
 
 pergunta_atual = 0
 
@@ -21,12 +22,8 @@ sair = retornarBase64('cancel')
 
 # Tudo que tiver dentro da janela
 
-botao = [[sg.Button('', image_data=proximo, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Proximo'),
-            sg.Canvas(size=(900,2)), sg.Button('', image_data=sair, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Cancelar')]]
-titulo = [[sg.Text('aa', font=('Consolas', 20), text_color='white', size=(sizetxt, None))]]
-
 layout =[   
-            [[sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'], font=('Consolas', 20), text_color='white', size=(sizetxt, 5))]],
+            [[sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'], font=('Consolas', 20), text_color='white', size=(sizetxt, 5)), sg.Text(f'Pergunta de número {pergunta_atual+1}', text_color='white')]],
             [sg.Canvas(size=(1100,2), background_color='white')],
             [sg.Canvas(size=(0,10))],
             [sg.Radio(f"A) {perguntas.perguntas[pergunta_atual]['opcoes'][0]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
@@ -65,17 +62,17 @@ while True:
             if perguntas.perguntas[pergunta_atual]['resp'] == perguntas.perguntas[pergunta_atual]['opcoes'][3]:
                 pontos += 1
 
-        print(pergunta_atual)
+        print(pontos)
 
         pergunta_atual += 1
 
         if pergunta_atual == len(perguntas.perguntas):
-                sg.popup('Fim do jogo!', font=('Calibri', 15))
+                sg.popup('Você chegou no fim do teste. Carregando resultados...', font=('Calibri', 15))
                 break
 
 
         layout =[   
-            [[sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'], font=('Consolas', 20), text_color='white', size=(sizetxt, 5))]],
+            [[sg.Text(perguntas.perguntas[pergunta_atual]['pergunta'], font=('Consolas', 20), text_color='white', size=(sizetxt, 5)), sg.Text(f'Pergunta de número {pergunta_atual+1}', text_color='white')]],
             [sg.Canvas(size=(1100,2), background_color='white')],
             [sg.Canvas(size=(0,10))],
             [sg.Radio(f"A) {perguntas.perguntas[pergunta_atual]['opcoes'][0]}", font=('Calibri', 15), group_id='fala', size=(sizetxt, None))],
@@ -93,3 +90,21 @@ while True:
         continue
 
 janela.close()
+
+if pontos >= 15:
+    layoutResultado = [
+        [[sg.Canvas(size=(400,2), background_color=None), sg.Text('Parabéns! Você foi aprovado', font=('Consolas', 20), text_color='white', size=(sizetxt, 5))]]
+
+]
+else:
+    layoutResultado = [
+        [[sg.Canvas(size=(400,2), background_color=None), sg.Text('Infelizmente você foi reprovado!', font=('Consolas', 20), text_color='white', size=(sizetxt, 5))]]
+]
+
+janela2 = sg.Window('Janela teste', layoutResultado, size=(1280,500))
+
+while True:
+    event, values = janela2.read()
+    #se o usuário fechar ou cancelar
+    if event == sg.WIN_CLOSED or event == 'Cancelar':
+        break
