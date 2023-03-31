@@ -2,7 +2,6 @@ from PIL import Image
 import base64
 import PySimpleGUI as sg
 import perguntas
-from time import sleep
 
 pergunta_atual = 0
 
