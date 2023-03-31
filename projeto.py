@@ -95,14 +95,17 @@ if pontos >= 21:
     layoutResultado = [
         [[sg.Canvas(size=(100,2), background_color=None), sg.Text('Parabéns! Você foi aprovado', font=('Consolas', 20), text_color='white', size=(sizetxt, 5))]],
         [[sg.Canvas(size=(170,2), background_color=None), sg.Text(f'Sua pontuação foi de: ', font=('Consolas', 20), text_color='white')]],
-        [[sg.Canvas(size=(220,2), background_color=None), sg.Text(f'{pontos/30*100}%', font=('Consolas', 50), text_color='green')]]
-
+        [[sg.Canvas(size=(220,2), background_color=None), sg.Text(f'{pontos/30*100}%', font=('Consolas', 50), text_color='green')]],
+        [sg.Canvas(size=(0,80), background_color=None)],
+        [[sg.Canvas(size=(230,2)), sg.Button('', image_data=sair, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Cancelar')]]
 ]
 else:
     layoutResultado = [
         [[sg.Canvas(size=(100,2), background_color=None), sg.Text('Infelizmente você foi reprovado!', font=('Consolas', 20), text_color='white', size=(sizetxt, 5))]],
         [[sg.Canvas(size=(170,2), background_color=None), sg.Text(f'Sua pontuação foi de: ', font=('Consolas', 20), text_color='white')]],
-        [[sg.Canvas(size=(220,2), background_color=None), sg.Text(f'{pontos/30*100}%', font=('Consolas', 50), text_color='red')]]
+        [[sg.Canvas(size=(220,2), background_color=None), sg.Text(f'{pontos/30*100}%', font=('Consolas', 50), text_color='red')]],
+        [sg.Canvas(size=(0,80), background_color=None)],
+        [[sg.Canvas(size=(230,2)), sg.Button('', image_data=sair, button_color=(sg.theme_background_color(),sg.theme_background_color()), border_width=0, key='Cancelar')]]
 ]
 
 janela2 = sg.Window('Janela teste', layoutResultado, size=(700,500))
