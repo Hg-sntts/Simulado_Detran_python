@@ -1,8 +1,16 @@
 import base64
 import PySimpleGUI as sg
 import perguntas
+import sys
+import sqlite3
 
 pergunta_atual = 0
+
+# Banco de dados
+dados = sqlite3.connect('usuarios.db')
+cursor = dados.cursor()
+cursor.execute('''CREATE TABLE IF NOT EXISTS usuarios (nome TEXT, idade TEXT, pontuacao INTEGER)''')
+dados.commit()
 
 #função pra retornar a imagem no formato base64
 def retornarBase64(image):
@@ -11,12 +19,34 @@ def retornarBase64(image):
 
 # Define uma cor e texto
 pontos = 0
-sg.theme('DarkBlue16')
+sg.theme('DarkBlue')
 sizetxt = 65
 
 # Botão de próximo e sair:
 proximo = retornarBase64('prox')
 sair = retornarBase64('cancel')
+
+# Janela de cadastro para exibir os acertos no fim do questionario
+layout_login= [
+    [sg.Text('Nome:'), sg.Input(key='User')],
+    [sg.Text('Idade:'), sg.Input(key='Age')],
+    [sg.Button('Registrar'), sg.Button('Sair')]
+]
+
+window = sg.Window('Cadastro', layout_login)
+while True:
+    event, values = window.read()
+    #se o usuário fechar ou cancelar
+    if event == 'Registrar':
+        nome = values['User']
+        idade = values['Age']
+        cursor.execute("INSERT INTO usuarios (nome, idade, pontuacao) VALUES(?, ?, ?)", (values['User'], values['Age'], 0))
+        dados.commit()
+        sg.popup('Cadastrado com sucesso!')
+        break
+    if event == sg.WIN_CLOSED or 'Sair':
+        sys.exit()
+window.close()
 
 # Tudo que tiver dentro da janela
 
@@ -67,6 +97,10 @@ while True:
         if pergunta_atual == len(perguntas.perguntas):
                 sg.popup('Você chegou no fim do teste. Carregando resultados...', font=('Calibri', 15))
                 break
+        # Aplicação dos pontos que o usuarios fez ao finalizar o questionario
+        # Caso o aplicativo seja fechado antes, sua pontuação ainda sera contabilizada
+        cursor.execute("UPDATE usuarios SET pontuacao = ? WHERE nome =? AND idade =?", (pontos, nome, idade))
+        dados.commit()
 
 
         layout =[   
@@ -113,3 +147,24 @@ while True:
     #se o usuário fechar ou cancelar
     if event == sg.WIN_CLOSED or event == 'Cancelar':
         break
+janela2.close()
+
+# Janela que exibe os acertos de quem realizou o questionario
+cursor.execute("SELECT * FROM usuarios")
+data = cursor.fetchall()
+
+layoutDados = [[sg.Table(values=data,
+                     headings=["Nome", "Idade", "Acertos"],
+                     justification='center',
+                     auto_size_columns=False,
+                     num_rows=min(25, len(data)))],
+          [sg.Button('Fechar')]]
+window = sg.Window('Pontuacao dos usuarios', layoutDados)
+while True:
+    event ,values = window.read()
+    if event == sg.WIN_CLOSED or event == 'Fechar':
+        break
+window.close()
+cursor.close()
+
+
