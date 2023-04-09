@@ -72,6 +72,9 @@ while True:
     #se o usuário fechar ou cancelar
     if event == sg.WIN_CLOSED or event == 'Cancelar':
         break
+    if not any (values.values()):
+        sg.popup('Escolha uma alternativa!')
+        continue
 
     if event == 'Proximo':
         if values[0]:
