@@ -38,6 +38,12 @@ while True:
     event, values = window.read()
     #se o usuário fechar ou cancelar
     if event == 'Registrar':
+        if values['User'] == '':
+            sg.popup('Insira seu nome!')
+            continue
+        elif values['Age'] == '':
+            sg.popup('Insira sua idade!')
+            continue
         nome = values['User']
         idade = values['Age']
         cursor.execute("INSERT INTO usuarios (nome, idade, pontuacao) VALUES(?, ?, ?)", (values['User'], values['Age'], 0))
