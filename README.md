@@ -6,7 +6,7 @@
 
 2. Importamos as perguntas de outro arquivo, que contém apenas perguntas, opções e as respectivas respostas.
 
-3. Esse programa pra ficar pronto, no estado em que está, levou mais ou menos pra ficar pronto. Porém com mais tempo podem ser adicionadas mais funções.
+3. Esse programa foi feito em um curto período de tempo devido a urgência da apresentação. Porém com mais tempo podem ser adicionadas mais funções.
 
 ![image](https://user-images.githubusercontent.com/115803150/229048389-b4bb8039-7aa6-466c-9669-7ac63f864ae2.png)
 
